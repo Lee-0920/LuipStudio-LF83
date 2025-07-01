@@ -1,0 +1,157 @@
+--文件存储格式定义：
+setting.fileFormat = {}
+setting.fileFormat.measure =
+{
+    current = 1,  -- 当前使用的索引
+    {
+        version = { 1, 0, 0, 0 },
+        {
+            name = "dateTime",
+            type = FieldType.Time,
+            size = 4,
+            text = "时间",
+            privilege = RoleType.Maintain,
+        },
+        {
+            name = "consistency",
+            type = FieldType.Float,
+            size = 4,
+            text = "抑制率",
+            unit = "%",
+            privilege = RoleType.Maintain,
+        },
+        {
+            name = "CF",
+            type = FieldType.Float,
+            size = 4,
+            text = "稳定系数",
+            privilege = RoleType.Maintain,
+        },
+        {
+            name = "mode",
+            type = FieldType.Enum,
+            size = 1,
+            option =
+            {
+                "正常",
+                "离线",
+                "维护",
+                "故障",
+                "校准",
+                "超标",
+            },
+            text = "标识",
+            privilege = RoleType.Maintain,
+        },
+        {
+            name = "resultType",
+            type = FieldType.Enum,
+            size = 1,
+            option =
+            {
+                "空白水",
+                "水样",
+                "质控样",
+                "核查",
+            },
+            text = "类型",
+            privilege = RoleType.Maintain,
+        },
+        {
+            name = "RLI",
+            type = FieldType.Float,
+            size = 4,
+            text = "相对发光度(%)",
+            privilege = RoleType.Maintain,
+        },
+        {
+            name = "C0",
+            type = FieldType.Int,
+            size = 4,
+            text = "初始参考发光度",
+            privilege = RoleType.Administrator,
+        },
+        {
+            name = "S0",
+            type = FieldType.Int,
+            size = 4,
+            text = "初始测量发光度",
+            privilege = RoleType.Administrator,
+        },
+        {
+            name = "Ct",
+            type = FieldType.Int,
+            size = 4,
+            text = "反应参考发光度",
+            privilege = RoleType.Administrator,
+        },
+        {
+            name = "St",
+            type = FieldType.Int,
+            size = 4,
+            text = "反应测量发光度",
+            privilege = RoleType.Administrator,
+        },
+        {
+            name = "bacteriaTemp",
+            type = FieldType.Float,
+            size = 4,
+            text = "发光菌温度",
+            unit = "℃",
+            privilege = RoleType.Administrator,
+        },
+        {
+            name = "measureTemp",
+            type = FieldType.Float,
+            size = 4,
+            text = "孵育槽温度",
+            unit = "℃",
+            privilege = RoleType.Administrator,
+        },
+        {
+            name = "environmentTemp",
+            type = FieldType.Float,
+            size = 4,
+            text = "环境温度",
+            unit = "℃",
+            privilege = RoleType.Administrator,
+        },
+        {
+            name = "measureTime",
+            type = FieldType.Int,
+            size = 4,
+            unit = "秒",
+            text = "测量时长",
+            privilege = RoleType.Maintain,
+        },
+        {
+            name = "gainRef",
+            type = FieldType.Float,
+            size = 4,
+            text = "参考增益倍数",
+            privilege = RoleType.Super,
+        },
+        {
+            name = "gainMea",
+            type = FieldType.Float,
+            size = 4,
+            text = "测量增益倍数",
+            privilege = RoleType.Super,
+        },
+        {
+            name = "refCurveIndex",
+            type = FieldType.Int,
+            size = 4,
+            text = "参考曲线索引",
+            privilege = RoleType.Super,
+        },
+        {
+            name = "meaCurveIndex",
+            type = FieldType.Int,
+            size = 4,
+            text = "测量曲线索引",
+            privilege = RoleType.Super,
+        },
+    },
+}
+return setting.fileFormat.measure
